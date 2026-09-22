@@ -57,7 +57,7 @@ jobs:
           EOF
           chmod 600 ~/.ssh/config
 
-          rsync -avz --delete --omit-dir-times \
+          rsync -avz --delete --omit-dir-times --no-perms \
             dist/ gh-deploy@deploy-aqua-global.dev2ksoftware.com:/srv/mac2k/data/static-sites/www/aqua-global-staging/
       - name: Purge Cloudflare cache
         run: |
@@ -96,7 +96,7 @@ jobs:
           EOF
           chmod 600 ~/.ssh/config
 
-          rsync -avz --delete --omit-dir-times \
+          rsync -avz --delete --omit-dir-times --no-perms \
             dist/ gh-deploy@deploy-aqua-global.dev2ksoftware.com:/srv/mac2k/data/static-sites/www/aqua-global/
       - name: Purge Cloudflare cache
         run: |
